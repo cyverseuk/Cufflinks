@@ -1,0 +1,555 @@
+{
+  "name": "Cuffdiff",
+  "label": "Cuffdiff up to 16 conditions",
+  "shortDescription": "Cuffdiff version 2.2.1",
+  "longDescription": "Part of the Cufflinks package, Cuffdiff, can be used to find significant changes in transcript expression, splicing, and promoter use.",
+  "helpURI": "http://cole-trapnell-lab.github.io/cufflinks/cuffdiff/index.html",
+  "datePublished": "",
+  "author":"Alice Minotto",
+  "version": "0.0.0",
+  "deploymentSystem": "cyverseUK-Storage2",
+  "deploymentPath": "/mnt/data/apps/cuffdiff",
+  "executionSystem": "cyverseUK-Batch2",
+  "executionType": "CLI",
+  "parallelism": "SERIAL",
+  "templatePath": "wrapper.sh",
+  "testPath": "test.sh",
+  "ontology": [ "http://edamontology.org/operation_0313",
+    "http://edamontology.org/operation_0314",
+    "http://edamontology.org/operation_3223",
+    "http://edamontology.org/topic_3055",
+    "http://edamontology.org/topic_3308" ],
+  "tags": [ "CyverseUK" ],
+  "inputs": [
+    {"id": "transcripts",
+    "value": {
+      "required": true,
+      "default": ""
+    },
+    "details": {
+      "label": "Transcripts GTF File",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+    {"id": "mask-file",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "Mask File",
+      "description": "Ignore all alignment within transcripts in this file.",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+    {"id": "contrast-file",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "Contrast File",
+      "description": "Perform the contrasts specified in this file",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+    {"id": "frag-bias-correct",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "FASTA File for bias correction",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+      {"id": "samples1",
+      "value": {
+        "required": true,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 1",
+        "description": "Multiple files can be provided as replicates of each condition.",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples2",
+      "value": {
+        "required": true,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 2",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples3",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 3",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples4",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 4",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples5",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 5",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples6",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 6",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples7",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 7",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples8",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 8",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples9",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 9",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples10",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 10",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples11",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 11",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples12",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 12",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples13",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 13",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples14",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 14",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples15",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 15",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples16",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 16",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }}
+    ],
+
+
+  "parameters": [
+    {"id": "labels",
+    "value": {
+      "type": "string",
+      "visible": true
+      },
+    "details": {
+      "label": "Labels",
+      "description": "comma-separated list of condition labels",
+      "showArgument": true,
+      "argument": "--labels "
+      }},
+    {"id": "FDR",
+      "value": {
+        "type": "string",
+        "visible": true,
+        "validator": "^0\\.[0-9]*$"
+      },
+      "details": {
+        "label": "False Discovery Rate",
+        "description": "to use in testing. Default is 0.05",
+        "showArgument": true,
+        "argument": "--FDR "
+      }
+    },
+    {"id": "multi-read-correct",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "Multi read correction",
+        "description": "use 'rescue method' for multi-reads",
+        "showArgument": true,
+        "argument": "--multi-read-correct "
+      }
+    },
+    {"id": "no-js-tests",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "No isoform switching tests",
+        "showArgument": true,
+        "argument": "--no-js-tests "
+      }
+    },
+    {"id": "time-series",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "Treat samples as time-series",
+        "showArgument": true,
+        "argument": "--time-series "
+      }
+    },
+    {"id": "library-type",
+      "value": {
+        "type": "enumeration",
+        "visible": true,
+        "enumValues": [
+          "ff-firststrand",
+          "ff-secondstrand",
+          "ff-unstranded",
+          "fr-firststrand",
+          "fr-secondstrand",
+          "fr-unstranded",
+          "transgrags"
+        ],
+        "default": "fr-unstranded"
+      },
+      "details": {
+        "label": "Library type",
+        "description": "Library prep used for input reads",
+        "showArgument": true,
+        "argument": "--library-type "
+      }
+    },
+    {"id": "dispersion-method",
+      "value": {
+        "type": "enumeration",
+        "visible": true,
+        "enumValues": [
+          "blind",
+          "per-condition",
+          "poisson",
+          "pooled"
+        ],
+        "default": "pooled"
+      },
+      "details": {
+        "label": "Dispersion method",
+        "description": "Method used to estimate dispersion models",
+        "showArgument": true,
+        "argument": "--dispersion-method "
+      }
+    },
+    {"id": "library-norm-method",
+      "value": {
+        "type": "enumeration",
+        "visible": true,
+        "enumValues": [
+          "classic-fpkm",
+          "geometric",
+          "quartile"
+        ],
+        "default": "geometric"
+      },
+      "details": {
+        "label": "Library normalization method",
+        "description": "Method used to normalize library sizes",
+        "showArgument": true,
+        "argument": "--library-norm-method "
+      }
+    },
+    {"id": "frag-len-mean",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "validator": "^[0-9]*$",
+        "default": 200
+      },
+      "details": {
+        "label": "Average fragment length",
+        "description": "Unpaired reads only",
+        "showArgument": true,
+        "argument": "--frag-len-mean "
+      }
+    },
+    {"id": "frag-len-std-dev",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "validator": "^[0-9]*$",
+        "default": 80
+      },
+      "details": {
+        "label": "Fragment length std deviation",
+        "description": "Unpaired reads only",
+        "showArgument": true,
+        "argument": "--frag-len-std-dev "
+      }
+    },
+    {"id": "min-alignment-count",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 10,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Minimu number of alignments in a locus for testing",
+        "showArgument": true,
+        "argument": "--min-alignment-count "
+      }
+    },
+    {"id": "max-mle-iterations",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 5000,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Max iterations for MLE calculation",
+        "showArgument": true,
+        "argument": "--max-mle-iterations "
+      }
+    },
+    {"id": "total-hits-norm",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "Counts all hits for normalization",
+        "description": "default is to count hits compatible with reference RNAs only",
+        "showArgument": true,
+        "argument": "--total-hits-norm "
+      }
+    },
+    {"id": "max-bundle-frags",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "validator": "^[0-9]*$",
+        "default": 500000
+      },
+      "details": {
+        "label": "Max number of fragments a locus may have before being skipped",
+        "showArgument": true,
+        "argument": "--max-bundle-frags "
+      }
+    },
+    {"id": "num-frag-count-draws",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 100,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Number of fragment generation samples",
+        "showArgument": true,
+        "argument": "--num-frag-count-draws "
+      }
+    },
+    {"id": "num-frag-assign-draws",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 50,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Number of fragment assignment samples per generation",
+        "showArgument": true,
+        "argument": "--num-frag-assign-draws "
+      }
+    },
+    {"id": "max-frag-multihits",
+      "value": {
+        "type": "string",
+        "visible": true,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "description": "default is unlimited",
+        "label": "Max number of alignments allowed per fragment",
+        "showArgument": true,
+        "argument": "--max-frag-multihits "
+      }
+    },
+    {"id": "min-reps-for-js-test",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 3,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Replicates needed for relative isoform shift testing",
+        "showArgument": true,
+        "argument": "--min-reps-for-js-test "
+      }
+    },
+    {"id": "no-effective-length-correction",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "No effective length correction",
+        "showArgument": true,
+        "argument": "--no-effective-length-correction "
+      }
+    },
+    {"id": "no-length-correction",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "No length correction",
+        "showArgument": true,
+        "argument": "--no-length-correction "
+      }
+    },
+    {"id": "num-frag-count-draws",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 100,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Number of fragment generation samples",
+        "showArgument": true,
+        "argument": "--num-frag-count-draws "
+      }
+    }
+]
+}
