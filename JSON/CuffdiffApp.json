@@ -537,19 +537,6 @@
         "showArgument": true,
         "argument": "--no-length-correction "
       }
-    },
-    {"id": "num-frag-count-draws",
-      "value": {
-        "type": "number",
-        "visible": true,
-        "default": 100,
-        "validator": "^[0-9]*$"
-      },
-      "details": {
-        "label": "Number of fragment generation samples",
-        "showArgument": true,
-        "argument": "--num-frag-count-draws "
-      }
     }
 ]
 }
