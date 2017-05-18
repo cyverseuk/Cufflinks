@@ -70,6 +70,25 @@ echo "Sample files, divided by condition, are " "${SAMPLES1U}""/""${SAMPLES2U}""
 echo "Arguments are " "${ARGSU}"
 
 # check number of labels is the same as inputs, if given
+if [ -n "${labels}" ]
+  then
+    noocc=$(($(grep -o "," <<< "${labels}" | wc -l)+1))
+    echo "You gave ""${noocc}"" labels"
+    samples=0
+    for varname in SAMPLES{1..16}U
+      do
+        if [ -n "${!varname}" ]
+          then
+            samples=$((samples +1))
+        fi
+      done
+    if [ ${samples} != ${noocc} ]
+      then
+        >&2 echo "ERROR: you provided a different number of labels and condition"
+        debug
+        exit 1
+    fi
+fi
 
 CMDLINEARG="cuffdiff ${ARGSU} "
 
