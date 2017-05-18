@@ -1,0 +1,673 @@
+{
+  "name": "cufflinks",
+  "label": "Cufflinks",
+  "shortDescription": "Cufflinks version 2.2.1",
+  "longDescription": "Transcriptome assembly and differential expression analysis for RNA-Seq.",
+  "helpURI": "http://cole-trapnell-lab.github.io/cufflinks/cuffdiff/index.html",
+  "datePublished": "",
+  "author":"Alice Minotto",
+  "version": "0.0.0",
+  "deploymentSystem": "cyverseUK-Storage2",
+  "deploymentPath": "/mnt/data/apps/cufflinks",
+  "executionSystem": "cyverseUK-Batch2",
+  "executionType": "CLI",
+  "parallelism": "SERIAL",
+  "templatePath": "wrapper.sh",
+  "testPath": "test.sh", #####
+  "ontology": [ "http://edamontology.org/operation_0313",
+    "http://edamontology.org/operation_0314",
+    "http://edamontology.org/operation_3223",
+    "http://edamontology.org/topic_3055",
+    "http://edamontology.org/topic_3308" ], ####
+  "tags": [ "CyverseUK" ],
+  "inputs": [
+    {"id": "aligned_reads",
+    "value": {
+      "required": true,
+      "default": ""
+    },
+    "details": {
+      "label": "Aligned Reads File (SAM/BAM)",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+    {"id": "GTF",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "GTF",
+      "description": "Quantitate against reference transcript annotations",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+    {"id": "GTF-guide",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "GTF Guide",
+      "description": "use reference transcript annotation to guide assembly",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+    {"id": "mask-file",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "Mask File",
+      "description": "ignore all alignment within transcripts in this file",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+      {"id": "frag-bias-correct",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "FASTA File for bias correction",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": 1
+      }}, ###
+      {"id": "samples2",
+      "value": {
+        "required": true,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 2",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples3",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 3",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples4",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 4",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples5",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 5",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples6",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 6",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples7",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 7",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples8",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 8",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples9",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 9",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples10",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 10",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples11",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 11",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples12",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 12",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples13",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 13",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples14",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 14",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples15",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 15",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }},
+      {"id": "samples16",
+      "value": {
+        "required": false,
+        "default": ""
+      },
+      "details": {
+        "label": "Sample Files 16",
+        "showArgument": false
+      },
+      "semantics": {
+        "maxCardinality": -1
+      }}
+    ],
+
+
+  "parameters": [
+
+    {"id": "multi-read-correct",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "Multi read correction",
+        "description": "use 'rescue method' for multi-reads",
+        "showArgument": true,
+        "argument": "--multi-read-correct "
+      }
+    },
+    {"id": "library-type",
+      "value": {
+        "type": "enumeration",
+        "visible": true,
+        "enumValues": [
+          "ff-firststrand",
+          "ff-secondstrand",
+          "ff-unstranded",
+          "fr-firststrand",
+          "fr-secondstrand",
+          "fr-unstranded",
+          "transgrags"
+        ],
+        "default": "fr-unstranded"
+      },
+      "details": {
+        "label": "Library type",
+        "description": "Library prep used for input reads",
+        "showArgument": true,
+        "argument": "--library-type "
+      }
+    },
+    {"id": "library-norm-method",
+      "value": {
+        "type": "enumeration",
+        "visible": true,
+        "enumValues": [
+          "classic-fpkm"
+        ]
+      },
+      "details": {
+        "label": "Library normalization method",
+        "description": "Method used to normalize library sizes",
+        "showArgument": true,
+        "argument": "--library-norm-method "
+      }
+    },
+    {"id": "frag-len-mean",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "validator": "^[0-9]*$",
+        "default": 200
+      },
+      "details": {
+        "label": "Average fragment length",
+        "description": "Unpaired reads only",
+        "showArgument": true,
+        "argument": "--frag-len-mean "
+      }
+    },
+    {"id": "frag-len-std-dev",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "validator": "^[0-9]*$",
+        "default": 80
+      },
+      "details": {
+        "label": "Fragment length std deviation",
+        "description": "Unpaired reads only",
+        "showArgument": true,
+        "argument": "--frag-len-std-dev "
+      }
+    },
+    {"id": "max-mle-iterations",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 5000,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Max iterations for MLE calculation",
+        "showArgument": true,
+        "argument": "--max-mle-iterations "
+      }
+    },
+    {"id": "compatible-hits-norm",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "Counts hits compatible with reference RNAs only",
+        "description": "default is to count all hits for normalization",
+        "showArgument": true,
+        "argument": "--compatible-hits-norm "
+      }
+    },
+    {"id": "num-frag-count-draws",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 100,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Number of fragment generation samples",
+        "showArgument": true,
+        "argument": "--num-frag-count-draws "
+      }
+    },
+    {"id": "num-frag-assign-draws",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 50,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Number of fragment assignment samples per generation",
+        "showArgument": true,
+        "argument": "--num-frag-assign-draws "
+      }
+    },
+    {"id": "max-frag-multihits",
+      "value": {
+        "type": "string",
+        "visible": true,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "description": "default is unlimited",
+        "label": "Max number of alignments allowed per fragment",
+        "showArgument": true,
+        "argument": "--max-frag-multihits "
+      }
+    },
+    {"id": "no-effective-length-correction",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "No effective length correction",
+        "showArgument": true,
+        "argument": "--no-effective-length-correction "
+      }
+    },
+    {"id": "no-length-correction",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "No length correction",
+        "showArgument": true,
+        "argument": "--no-length-correction "
+      }
+    },
+    {"id": "label",
+      "value": {
+        "type": "string",
+        "visible": true,
+        "default": "CUFF"
+      },
+      "details": {
+        "label": "Label",
+        "description": "assembled transcripts have this ID prefix",
+        "showArgument": true,
+        "argument": "--label "
+      }
+    },
+    {"id": "min-isoform-fraction",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 0.10,
+        "validator": "^(0(\\.[0-9]+)?|1)$"
+      },
+      "details": {
+        "label": "Min isoform fraction",
+        "description": "suppress transcripts below this abundance level",
+        "showArgument": true,
+        "argument": "--min-isoform-fraction "
+      }
+    },
+    {"id": "pre-mrna-fraction",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 0.15,
+        "validator": "^(0(\\.[0-9]+)?|1)$"
+      },
+      "details": {
+        "label": "Pre mRNA fraction",
+        "description": "suppress intra-intronic transcripts below this level",
+        "showArgument": true,
+        "argument": "--pre-mrna-fraction "
+      }
+    },
+    {"id": "max-intron-length",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 300000,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Max intron length",
+        "description": "ignore alignments with gaps longer than this",
+        "showArgument": true,
+        "argument": "--max-intron-length "
+      }
+    },
+    {"id": "junc-alpha",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 0.001,
+        "validator": "^(0(\\.[0-9]+)?|1)$"
+      },
+      "details": {
+        "label": "Alpha for junction binomial test filter",
+        "showArgument": true,
+        "argument": "--junc-alpha "
+      }
+    },
+    {"id": "small-anchor-fraction",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 0.09,
+        "validator": "^(0(\\.[0-9]+)?|1)$"
+      },
+      "details": {
+        "label": "percent read overhang taken as 'suspiciously small'",
+        "showArgument": true,
+        "argument": "--small-anchor-fraction "
+      }
+    },
+    {"id": "min-frags-per-transfrag",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 10,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "minimum number of fragments needed for new transfrags",
+        "showArgument": true,
+        "argument": "--min-frags-per-transfrag "
+      }
+    },
+    {"id": "overhang-tolerance",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 8,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "number of terminal exon bp to tolerate in introns",
+        "showArgument": true,
+        "argument": "--overhang-tolerance "
+      }
+    },
+    {"id": "max-bundle-length",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 3500000,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "maximum genomic length allowed for a given bundle",
+        "showArgument": true,
+        "argument": "--max-bundle-length "
+      }
+    },
+    {"id": "max-bundle-frags",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 500000,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "maximum fragments allowed in a bundle before skipping",
+        "showArgument": true,
+        "argument": "--max-bundle-frags "
+      }
+    },
+    {"id": "min-intron-length",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 50,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "minimum intron size allowed in genome",
+        "showArgument": true,
+        "argument": "--min-intron-length "
+      }
+    },
+    {"id": "trim-3-avgcov-thresh",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 10,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "minimum avg coverage required to attempt 3' trimming",
+        "showArgument": true,
+        "argument": "--trim-3-avgcov-thresh "
+      }
+    },
+    {"id": "trim-3-dropoff-frac",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 0.1,
+        "validator": "^(0(\\.[0-9]+)?|1)$"
+      },
+      "details": {
+        "label": "fraction of avg coverage below which to trim 3' end",
+        "showArgument": true,
+        "argument": "--trim-3-dropoff-frac "
+      }
+    },
+    {"id": "max-multiread-fraction",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 0.75,
+        "validator": "^(0(\\.[0-9]+)?|1)$"
+      },
+      "details": {
+        "label": "maximum fraction of allowed multireads per transcript",
+        "showArgument": true,
+        "argument": "--max-multiread-fraction "
+      }
+    },
+    {"id": "overlap-radius",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 50,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "maximum gap size to fill between transfrags (in bp)",
+        "showArgument": true,
+        "argument": "--overlap-radius "
+      }
+    },
+    {"id": "no-faux-reads",
+      "value": {
+        "type": "flag",
+        "visible": true
+      },
+      "details": {
+        "label": "disable tiling by faux reads",
+        "showArgument": true,
+        "argument": "--no-faux-reads "
+      }
+    },
+    {"id": "overhang-tolerance",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 600,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "3' overhang tolerance",
+        "description": "overhang allowed on 3' end when merging with reference",
+        "showArgument": true,
+        "argument": "--3-overhang-tolerance "
+      }
+    },
+    {"id": "intron-overhang-tolerance",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 30,
+        "validator": "^[0-9]*$"
+      },
+      "details": {
+        "label": "Intron overhang tolerance",
+        "description": "overhang allowed inside reference intron when merging",
+        "showArgument": true,
+        "argument": "--intron-overhang-tolerance "
+      }
+    }
+]
+}
