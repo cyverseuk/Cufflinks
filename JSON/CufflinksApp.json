@@ -13,12 +13,12 @@
   "executionType": "CLI",
   "parallelism": "SERIAL",
   "templatePath": "wrapper.sh",
-  "testPath": "test.sh", #####
+  "testPath": "test.sh",
   "ontology": [ "http://edamontology.org/operation_0313",
     "http://edamontology.org/operation_0314",
-    "http://edamontology.org/operation_3223",
-    "http://edamontology.org/topic_3055",
-    "http://edamontology.org/topic_3308" ], ####
+    "http://edamontology.org/operation_0523",
+    "http://edamontology.org/operation_3258",
+    "http://edamontology.org/topic_3308" ],
   "tags": [ "CyverseUK" ],
   "inputs": [
     {"id": "aligned_reads",
@@ -83,186 +83,6 @@
       },
       "semantics": {
         "maxCardinality": 1
-      }}, ###
-      {"id": "samples2",
-      "value": {
-        "required": true,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 2",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples3",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 3",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples4",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 4",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples5",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 5",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples6",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 6",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples7",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 7",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples8",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 8",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples9",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 9",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples10",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 10",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples11",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 11",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples12",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 12",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples13",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 13",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples14",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 14",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples15",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 15",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
-      }},
-      {"id": "samples16",
-      "value": {
-        "required": false,
-        "default": ""
-      },
-      "details": {
-        "label": "Sample Files 16",
-        "showArgument": false
-      },
-      "semantics": {
-        "maxCardinality": -1
       }}
     ],
 
@@ -641,7 +461,7 @@
         "argument": "--no-faux-reads "
       }
     },
-    {"id": "overhang-tolerance",
+    {"id": "overhang-tolerance-3",
       "value": {
         "type": "number",
         "visible": true,
