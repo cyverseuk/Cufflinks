@@ -15,7 +15,7 @@ for word in ${rmthis}
 rmthis=`ls`
 echo ${rmthis}
 
-ARGSU=" ${multi-read-correct} ${library-type} ${library-norm-method} ${frag-len-mean} ${frag-len-std-dev} ${max-mle-iterations} ${compatible-hits-norm} ${num-frag-count-draws} ${num-frag-assign-draws} ${max-frag-multihits} ${no-effective-length-correction} ${no-length-correction} ${label} ${min-isoform-fraction} ${pre-mrna-fraction} ${max-intron-length} ${junc-alpha} ${small-anchor-fraction} ${min-frags-per-transfrag} ${overhang-tolerance} ${max-bundle-length} ${max-bundle-frags} ${min-intron-length} ${trim-3-avgcov-thresh} ${trim-3-dropoff-fract} ${max-multiread-fraction} ${overlap-radius} ${no-faux-reads} ${overhang-tolerance-3} ${intron-overhang-tolerance} "
+ARGSU=" ${multi-read-correct} ${library-type} ${library-norm-method} ${frag-len-mean} ${frag-len-std-dev} ${max-mle-iterations} ${compatible-hits-norm} ${num-frag-count-draws} ${num-frag-assign-draws} ${max-frag-multihits} ${no-effective-length-correction} ${no-length-correction} ${label} ${min-isoform-fraction} ${pre-mrna-fraction} ${max-intron-length} ${junc-alpha} ${small-anchor-fraction} ${min-frags-per-transfrag} ${overhang-tolerance} ${max-bundle-length} ${max-bundle-frags} ${min-intron-length} ${trim-3-avgcov-thresh} ${trim-3-dropoff-frac} ${max-multiread-fraction} ${overlap-radius} ${no-faux-reads} ${overhang-tolerance-3} ${intron-overhang-tolerance} "
 ALIGNEDU="${aligned_reads}"
 GTFU="${GTF}"
 GUIDEU="${GTF-guide}"
