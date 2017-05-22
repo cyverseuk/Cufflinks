@@ -4,7 +4,8 @@ LABEL ubuntu.version="16.04" cufflinks.version="2.2.1" maintainer="Alice Minotto
 
 USER root
 
-RUN apt-get -y update && apt-get -yy install wget && \
+RUN apt-get -y update && apt-get -yy install python \
+    wget && \
     wget http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz && \
     tar -zxvf cufflinks-2.2.1.Linux_x86_64.tar.gz && \
     rm cufflinks-2.2.1.Linux_x86_64.tar.gz && \
