@@ -1,0 +1,80 @@
+{
+  "name": "cuffmerge",
+  "label": "Cuffmerge",
+  "shortDescription": "Cuffmerge version 2.2.1",
+  "longDescription": "Transcriptome assembly and differential expression analysis for RNA-Seq. Cuffmerge can be used to merge several assemblies.",
+  "helpURI": "http://cole-trapnell-lab.github.io/cufflinks/cuffdiff/index.html",
+  "datePublished": "",
+  "author":"Alice Minotto",
+  "version": "0.0.0",
+  "deploymentSystem": "cyverseUK-Storage2",
+  "deploymentPath": "/mnt/data/apps/cuffmerge",
+  "executionSystem": "cyverseUK-Batch2",
+  "executionType": "CLI",
+  "parallelism": "SERIAL",
+  "templatePath": "wrapper.sh",
+  "testPath": "test.sh",
+  "ontology": [ "http://edamontology.org/operation_0313",
+    "http://edamontology.org/operation_0314",
+    "http://edamontology.org/operation_0523",
+    "http://edamontology.org/operation_3258",
+    "http://edamontology.org/operation_0232",
+    "http://edamontology.org/topic_3308" ],
+  "tags": [ "CyverseUK" ],
+  "inputs": [
+    {"id": "to-merge",
+    "value": {
+      "required": true,
+      "default": ""
+    },
+    "details": {
+      "label": "Files to merge",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": -1
+    }},
+    {"id": "GTF",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "Reference annotation GTF",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }},
+    {"id": "FASTA",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": {
+      "label": "FASTA reference",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }}
+    ],
+
+
+  "parameters": [
+    {"id": "min-isoform-fraction",
+      "value": {
+        "type": "number",
+        "visible": true,
+        "default": 0.05,
+        "validator": "^(0(\\.[0-9]+)?|1)$"
+      },
+      "details": {
+        "label": "Min isoform fraction",
+        "description": "discard isoforms with abundance below this",
+        "showArgument": true,
+        "argument": "--min-isoform-fraction "
+      }
+    }
+]
+}
