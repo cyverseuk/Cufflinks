@@ -1,6 +1,6 @@
 {
   "name" : "Cuffmerge",
-  "appId" : "Cuffmerge-0.0.0",
+  "appId" : "Cuffmerge-0.0.0u1",
   "archive" : false,
   "inputs": {
     "to-merge": ["agave://cyverseuk-storage2/rosysnake/data_test/Danio_rerio.Zv9.66.gtf", "agave://cyverseuk-storage2/rosysnake/data_test/stringtie.gtf"]
